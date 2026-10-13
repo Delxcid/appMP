@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Escritorio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+    <div class="container my-4">
+        <h1 class="text-center mb-4">Pokédex - Ejercicio 2 (API Pública)</h1>
+
+        <!-- Controles de Búsqueda y Filtros -->
+        <div class="row mb-4 g-3">
+            <div class="col-md-6">
+                <input type="text" id="inputSearch" class="form-control" placeholder="Buscar Pokémon por nombre...">
+            </div>
+            <div class="col-md-6">
+                <select id="selectType" class="form-select">
+                    <option value="">Filtrar por tipo (Todos)</option>
+                    <option value="fire">Fuego (Fire)</option>
+                    <option value="water">Agua (Water)</option>
+                    <option value="grass">Planta (Grass)</option>
+                    <option value="electric">Eléctrico (Electric)</option>
+                    <option value="bug">Bicho (Bug)</option>
+                    <option value="poison">Veneno (Poison)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Indicador de carga -->
+        <div class="text-center my-5" id="loading">
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <p class="mt-2">Cargando Pokémon...</p>
+        </div>
+
+        <!-- Contenedor de Tarjetas -->
+        <div class="row" id="card-container"></div>
+
+        <!-- Template de Tarjeta -->
+        <template id="template-card">
+            <div class="col-md-3 mb-4">
+                <div class="card bg-secondary text-white text-center shadow h-100">
+                    <img src="" class="card-img-top p-3 pokemon-img" alt="pokemon" style="height: 180px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize fw-bold pokemon-name"></h5>
+                        <p class="card-text mb-1"><strong>Tipo:</strong> <span class="pokemon-type"></span></p>
+                        <p class="card-text"><strong>ID:</strong> <span class="pokemon-id"></span></p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

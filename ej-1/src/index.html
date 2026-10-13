@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty - Desktop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-secondary">
+    <div class="container my-5">
+        <h1 class="text-white text-center mb-4">Personajes de Rick and Morty</h1>
+        
+        <!-- Indicador de carga -->
+        <section class="d-flex align-items-center text-white mb-4" id="loading">
+            <strong>Cargando...</strong>
+            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        </section>
+
+        <!-- Contenedor dinámico de tarjetas -->
+        <div class="row" id="card-dinamica"></div>
+
+        <!-- Plantilla para las tarjetas (muestra imagen, nombre, estado, especie, género y origen) -->
+        <template id="template-card">
+            <article class="col-md-6 col-lg-4 mb-4">
+                <div class="card text-center bg-dark text-white shadow h-100">
+                    <img src="" class="card-img-top" alt="Avatar del personaje" style="max-height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold"></h5>
+                        <p class="card-text mb-1"><strong>Estado:</strong> <span class="span-status"></span></p>
+                        <p class="card-text mb-1"><strong>Especie:</strong> <span class="span-species"></span></p>
+                        <p class="card-text mb-1"><strong>Género:</strong> <span class="span-gender"></span></p>
+                        <p class="card-text mb-0"><strong>Origen:</strong> <span class="span-origin"></span></p>
+                    </div>
+                </div>
+            </article>
+        </template>
+    </div>
+
+    <!-- Script de lógica -->
+    <script src="script.js"></script>
+</body>
+</html>
